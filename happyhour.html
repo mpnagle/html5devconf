@@ -1,0 +1,32 @@
+<head>
+  <title>happyhour</title>
+</head>
+
+<body>
+  <div class="outer">
+    {{> bars}}
+  </div>
+</body>
+
+<template name="bars">
+  <h1>Pick a bar!</h1>
+
+  {{#each listBars}}
+    {{> bar}}
+  {{/each}}
+
+  {{#if selectedBar}}
+  <div class='details'>
+    <div class="name">{{selectedBar.name}}</div>
+    <input class='inc' type='button' value="Give a point">
+  </div>
+  {{/if}}
+
+</template>
+
+<template name="bar">
+  <div class="bar {{selected}}">
+    <span class="name">{{name}}</span>
+    <span class="score">{{score}}</span>
+  </div>
+</template>
